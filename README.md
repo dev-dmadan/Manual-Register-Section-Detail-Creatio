@@ -6,7 +6,7 @@ Mengunakan tool wizard Creatio sangatlah membantu, dan mempercepat proses pembua
 
 Kekurangan dari tool wizard adalah masalah penamaan yang kurang friendly terutama untuk penamaan schema detail. Selain itu masalah muncul saat melakukan pengembangan lebih dari 1 developer, kadang kali saat melakukan commit/push sering terjadi bentrok karena penamaan dari tool wizard yang sama (biasanya hal ini terjadi di oracle/mssql, karena sistem penamaan menggunakan increment)
 
-Solusi untuk hal tersebut adalah melakukan register object secara manual, berikut tutorialnya. Bahasa SQL yang digunakan adalah SQL Server (MSSQL DBMS), harap sesuaikan ulang jika menggunakan DBMS yang berbeda seperti Oracle/Postgre
+Solusi untuk hal tersebut adalah melakukan register object secara manual, berikut tutorialnya. Bahasa SQL yang digunakan adalah **SQL Server (MSSQL DBMS)**, **harap sesuaikan ulang jika menggunakan DBMS yang berbeda seperti Oracle/Postgre**
 
 ## Register New Detail
 
@@ -149,7 +149,6 @@ VALUES (
     )
 );
 ```
-
 Setelah itu lakukan binding data Id "SysDetail".
 
 ## Get Binding Data
@@ -209,3 +208,27 @@ FROM dbo.SysModule
 WHERE 
     Code = EntitySchemaName
 ```
+
+## Register detail menggunakan Procedure
+
+Penjelasan diatas adalah konsep atau hal-hal dasar yang harus dilakukan untuk melakukan registrati detail, disini saya membuat sebuah procedure untuk mempermudah melakukan hal-hal diatas menjadi sangat simple.
+
+Pada repository ini terdapat folder yang namanya sesuai dengan DBMS yang akan digunakan, didalamnya terdapat beberapa procedure dan function yaitu:
+- Procedure registrati detail   : ProcedureRegisterNewDetail.sql
+- Function get Id Binding data  : FunctionGetIdForBindObject.sql
+
+### Procedure registrasi detail
+
+> Coming soon
+
+<!-- Procedure ini berfungsi untuk melakukan registrasi detail secara otomatis, cukup memasukan beberapa data ke parameter yang disediakan, maka detail akan langsung terdaftar ke Creatio, dan dapat digunakan.
+**Pastikan Object detail, Schema detail, dan Edit Page detail sudah dibuat terlebih dahulu (Step No. 1 s.d 3 pada sesi Register New Detail)**
+
+Berikut cara penggunaannya:
+```sql
+EXECUTE dbo.UsrProcedureRegisterNewDetail;
+``` -->
+
+### Function get Id Binding data
+
+> Coming soon
